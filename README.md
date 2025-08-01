@@ -73,7 +73,6 @@ Spec System integrates with your existing workflow:
 ### Quick Setup
 
 ```bash
-# Download Spec System into your project
 curl -sSL https://raw.githubusercontent.com/ocentra/spec/main/setup.sh | bash
 ```
 
@@ -261,7 +260,7 @@ AI can seamlessly switch between:
 
 #### **Example Context Switching**
 
-```bash
+```markdown
 # Check current status
 @status
 
