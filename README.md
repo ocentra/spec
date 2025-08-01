@@ -37,7 +37,7 @@ Spec System is completely yours to shape. Define your own coding standards, writ
 
 **Relief**: Your coding agent finally feels like a senior developer on your team—thinking your way, following your patterns, and shipping at your standards.
 
-## 🏗️ How Spec System Works
+## 🔄 How Spec System Works
 
 Spec System works through a **static instruction library** that AI agents follow. Think of it as a comprehensive rulebook that tells AI exactly how to behave like a senior developer on your team.
 
@@ -54,15 +54,46 @@ It essentially acts as a highly detailed instruction manual or a "senior develop
 - **Memory and Logging**: The system maintains a `project-memory.md` for context and a detailed `ai-log.md` to track all actions, decisions, and errors, providing transparency and auditability.
 - **User-Centric Workflow**: While highly automated, the system includes numerous checkpoints for user input, review, and approval, ensuring the final product aligns with the user's vision.
 
-### Workflow Overview
+### Development Workflow
 
-- **Initialization** (`start.md`): A new or existing project is identified. The system configures the AI assistant and can initiate the planning phase.
-- **Product Planning** (`plan-product.md`): The user is prompted for the project's vision, key features, target users, and technology stack. This information is used to generate foundational documents like `mission.md`, `roadmap.md`, and `tech-stack.md`.
-- **Specification Creation** (`create-spec.md`): For each new feature, a detailed specification is created. This includes user stories, scope, technical requirements, and potentially database and API specifications. The output is a set of "sub-spec" documents.
-- **Task Execution** (`execute-tasks.md`): Once a spec is approved, the work is broken down into a `tasks.md` file. The AI then executes these tasks, following a Test-Driven Development (TDD) approach where tests are often the first sub-task.
-- **Status and Updates** (`status.md`, `update.md`): The system provides commands to check the current project status and to synchronize the documentation with the actual state of the codebase.
+#### **Phase 1: Initialization** (`start.md`)
+A new or existing project is identified. The system configures the AI assistant and can initiate the planning phase.
 
-### Static Instructions (Shared Foundation)
+#### **Phase 2: Product Planning** (`plan-product.md`)
+The user is prompted for the project's vision, key features, target users, and technology stack. This information is used to generate foundational documents like `mission.md`, `roadmap.md`, and `tech-stack.md`.
+
+**Interactive Process**: Spec System doesn't just generate files—it **interactively guides you** through the entire development process:
+
+```markdown
+@plan-product
+
+AI: "What type of project are you building?"
+You: "A SaaS tool for customer feedback"
+
+AI: "Who are your target users?"
+You: "Product managers at B2B SaaS companies"
+
+AI: "What are your key features?"
+You: "Feedback collection, sentiment analysis, reporting dashboard"
+
+AI: "Do you have a preferred tech stack?"
+You: "Use my defaults"
+
+AI: "Let me create your project structure..."
+```
+
+#### **Phase 3: Specification Creation** (`create-spec.md`)
+For each new feature, a detailed specification is created. This includes user stories, scope, technical requirements, and potentially database and API specifications. The output is a set of "sub-spec" documents.
+
+#### **Phase 4: Task Execution** (`execute-tasks.md`)
+Once a spec is approved, the work is broken down into a `tasks.md` file. The AI then executes these tasks, following a Test-Driven Development (TDD) approach where tests are often the first sub-task.
+
+#### **Phase 5: Status and Updates** (`status.md`, `update.md`)
+The system provides commands to check the current project status and to synchronize the documentation with the actual state of the codebase.
+
+### File Architecture
+
+#### **Static Instructions (Shared Foundation)**
 
 The `.spec/` directory contains a shared instruction library that serves as the foundation for all projects:
 
@@ -72,14 +103,68 @@ The `.spec/` directory contains a shared instruction library that serves as the 
 
 **Important**: These files are designed as a shared, reusable foundation. Individual projects don't modify these files during development - they're treated as read-only instructions. However, contributors can fork the repository to improve the system or create their own customized versions.
 
-### Project-Specific Files (Generated Per Project)
+#### **Project-Specific Files (Auto-Generated)**
 
-When you use Spec System, it creates project-specific documentation:
+When you first run `@start` and `@plan-product`, Spec System automatically generates several key files:
 
-- **`[PROJECT_NAME]-spec/`** - Project documentation and configuration
-- **`checklist.md`** - Task tracking and progress
-- **`project-memory.md`** - AI memory and context
-- **`ai-log.md`** - Activity logging and audit trail
+**Project Documentation:**
+- **`[PROJECT_NAME]-spec/product/mission.md`** - Complete product vision with pitch, users, problems, and features
+- **`[PROJECT_NAME]-spec/product/tech-stack.md`** - Technology choices and configurations
+- **`[PROJECT_NAME]-spec/product/roadmap.md`** - Development phases and feature timeline
+- **`[PROJECT_NAME]-spec/product/decisions.md`** - Technical decisions log with rationale
+- **`[PROJECT_NAME]-spec/product/mission-lite.md`** - Condensed mission for AI context efficiency
+
+**Project Management:**
+- **`[PROJECT_NAME]-spec/project-memory.md`** - AI's persistent memory and context tracking
+- **`[PROJECT_NAME]-spec/checklist.md`** - Task completion tracking and progress
+- **`[PROJECT_NAME]-spec/ai-log.md`** - Detailed activity log and audit trail
+
+**AI Assistant Configuration:**
+- **`.cursor/rules/`** - Cursor IDE configuration files
+- **`.claude/`** - Claude Code configuration files  
+- **`GEMINI.md`** - Gemini configuration file
+
+#### **What to Expect During Setup**
+
+1. **Interactive Questions**: AI asks about your project vision, features, users, and tech preferences
+2. **Smart Defaults**: Uses your existing tech stack preferences when available
+3. **Missing Information**: Prompts for any required details not provided
+4. **File Generation**: Creates all documentation with your specific project details
+5. **AI Integration**: Sets up your preferred AI assistants with Spec command access
+
+### AI Memory & Context Management
+
+#### **Persistent Memory System**
+
+- **`project-memory.md`**: AI remembers every decision, context, and progress
+- **`checklist.md`**: Tracks completed tasks and next steps
+- **`ai-log.md`**: Records all AI activities and decisions
+- **`decisions.md`**: Documents technical choices and rationale
+
+#### **Context Hopping**
+
+AI can seamlessly switch between:
+
+- **Planning**: Review and update roadmap
+- **Development**: Execute specific tasks
+- **Review**: Check status and progress
+- **Debugging**: Analyze issues and solutions
+
+#### **Example Context Switching**
+
+```markdown
+# Check current status
+@status
+
+# Continue where you left off
+@execute-tasks
+
+# Create new feature spec
+@create-spec
+
+# Update project documentation
+@update
+```
 
 ### Runtime Integration
 
@@ -193,135 +278,6 @@ your-project/
 ├── README.md         # Project overview
 └── package.json      # Project dependencies
 ```
-
-## 🔄 How Spec System Works
-
-### Auto-Generation Process
-
-When you first run `@start` and `@plan-product`, Spec System automatically generates several key files:
-
-#### **Project Documentation (Auto-Generated)**
-
-- **`[PROJECT_NAME]-spec/product/mission.md`** - Complete product vision with pitch, users, problems, and features
-- **`[PROJECT_NAME]-spec/product/tech-stack.md`** - Technology choices and configurations
-- **`[PROJECT_NAME]-spec/product/roadmap.md`** - Development phases and feature timeline
-- **`[PROJECT_NAME]-spec/product/decisions.md`** - Technical decisions log with rationale
-- **`[PROJECT_NAME]-spec/product/mission-lite.md`** - Condensed mission for AI context efficiency
-
-#### **Project Management Files (Auto-Generated)**
-
-- **`[PROJECT_NAME]-spec/project-memory.md`** - AI's persistent memory and context tracking
-- **`[PROJECT_NAME]-spec/checklist.md`** - Task completion tracking and progress
-- **`[PROJECT_NAME]-spec/ai-log.md`** - Detailed activity log and audit trail
-- **`README.md`** - User-facing project documentation for GitHub
-
-#### **AI Assistant Configuration (Auto-Generated)**
-
-- **`.cursor/rules/`** - Cursor IDE configuration files
-- **`.claude/`** - Claude Code configuration files  
-- **`GEMINI.md`** - Gemini configuration file
-
-#### **What to Expect During Setup**
-
-1. **Interactive Questions**: AI asks about your project vision, features, users, and tech preferences
-2. **Smart Defaults**: Uses your existing tech stack preferences when available
-3. **Missing Information**: Prompts for any required details not provided
-4. **File Generation**: Creates all documentation with your specific project details
-5. **AI Integration**: Sets up your preferred AI assistants with Spec command access
-
-### Interactive Question-Asking Process
-
-Spec System doesn't just generate files—it **interactively guides you** through the entire development process:
-
-#### **Step-by-Step Planning**
-
-1. **Project Discovery**: AI asks targeted questions about your project
-2. **Requirements Gathering**: Interactive prompts for features, users, goals
-3. **Tech Stack Selection**: Guided choices based on your preferences
-4. **Roadmap Creation**: Collaborative planning of development phases
-5. **Spec Development**: Detailed feature breakdown with your input
-
-#### **Example Interaction Flow**
-
-```markdown
-@plan-product
-
-AI: "What type of project are you building?"
-You: "A SaaS tool for customer feedback"
-
-AI: "Who are your target users?"
-You: "Product managers at B2B SaaS companies"
-
-AI: "What are your key features?"
-You: "Feedback collection, sentiment analysis, reporting dashboard"
-
-AI: "Do you have a preferred tech stack?"
-You: "Use my defaults"
-
-AI: "Let me create your project structure..."
-```
-
-### AI Memory & Context Management
-
-#### **Persistent Memory System**
-
-- **`project-memory.md`**: AI remembers every decision, context, and progress
-- **`checklist.md`**: Tracks completed tasks and next steps
-- **`ai-log.md`**: Records all AI activities and decisions
-- **`decisions.md`**: Documents technical choices and rationale
-
-#### **Context Hopping**
-
-AI can seamlessly switch between:
-
-- **Planning**: Review and update roadmap
-- **Development**: Execute specific tasks
-- **Review**: Check status and progress
-- **Debugging**: Analyze issues and solutions
-
-#### **Example Context Switching**
-
-```markdown
-# Check current status
-@status
-
-# Continue where you left off
-@execute-tasks
-
-# Create new feature spec
-@create-spec
-
-# Update project documentation
-@update
-```
-
-### Expected File Purposes
-
-#### **AI Configuration Files**
-
-- **`.cursor/rules/`**: Enables AI commands in Cursor IDE
-- **`.claude/`**: Provides context for Claude Code
-- **`GEMINI.md`**: Configures Gemini AI assistance
-
-#### **Project Documentation**
-
-- **`mission.md`**: Product vision, goals, and target users
-- **`tech-stack.md`**: Technology choices and configurations
-- **`roadmap.md`**: Development phases and feature timeline
-- **`decisions.md`**: Technical decisions with rationale
-
-#### **Development Tracking**
-
-- **`project-memory.md`**: AI's persistent memory and context
-- **`checklist.md`**: Task completion tracking and progress
-- **`ai-log.md`**: Detailed activity log and audit trail
-
-#### **Feature Specifications**
-
-- **`spec.md`**: Feature requirements and user stories
-- **`technical-spec.md`**: Implementation details and architecture
-- **`tasks.md`**: Step-by-step task breakdown
-- **`sub-specs/`**: Detailed technical specifications
 
 ## 🚀 Usage Examples
 
@@ -546,7 +502,11 @@ Unlike basic AI setups, Spec System provides:
 <details>
 <summary><strong>Who created Spec System and what was the idea?</strong></summary>
 
-Spec System was created to address the common struggles developers face with AI-assisted development. After observing many people struggle with chaotic AI workflows, inconsistent code quality, and the need to constantly re-explain requirements, the system was designed to provide a "senior developer in a box" experience that enforces disciplined, spec-driven development processes.
+Spec System was created by **Sujan Mishra** to address the common struggles developers face with AI-assisted development. After observing many people struggle with chaotic AI workflows, inconsistent code quality, and the need to constantly re-explain requirements, the system was designed to provide a "senior developer in a box" experience that enforces disciplined, spec-driven development processes.
+
+**Connect with the creator:**
+- **Website**: [Ocentra](https://ocentra.ca/) - Professional services and consulting
+- **LinkedIn**: [Sujan Mishra](https://www.linkedin.com/in/sujanmishra/) - Connect for questions and collaboration
 
 </details>
 
@@ -578,7 +538,6 @@ The system automatically detects your preferred AI tools and creates the necessa
 </details>
 
 <details>
-
 <summary><strong>How do I get started with Spec System?</strong></summary>
 
 1. **Quick Setup**: Run `curl -sSL https://raw.githubusercontent.com/ocentra/spec/main/setup.sh | bash`
@@ -604,16 +563,14 @@ Absolutely! Spec System is designed to be completely customizable:
 </details>
 
 <details>
-
 <summary><strong>I have more questions!</strong></summary>
 
 Great! Feel free to reach out:
 
 - **LinkedIn**: [Sujan Mishra](https://www.linkedin.com/in/sujanmishra/)
-- **GitHub Issues**: Open an issue for technical questions
-- **Community**: Join discussions about AI-assisted development
+- **Issues**: Open an issue for technical questions in github here, or directly message me in LinkedIn
 
-We're always happy to help you get the most out of Spec System!
+Always happy to help you get the most out of Spec System!
 
 </details>
 
