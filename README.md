@@ -2,7 +2,7 @@
 
 > **Transform AI coding from chaotic prompting into structured, predictable development**
 
-The Spec system is a **comprehensive, static instruction library** designed to make AI agents work like senior developers on your team. With nearly **40k tokens** of detailed instructions, it provides the context, structure, and workflows that turn AI coding from frustrating trial-and-error into reliable, consistent development.
+The Spec system is a **comprehensive, static instruction library** designed to make AI agents work like senior developers on your team. With nearly **70k tokens** of highly detailed, modularized, and task-specific instructions, it provides the context, structure, and workflows that turn AI coding from frustrating trial-and-error into reliable, consistent development.
 
 ## 🚀 Why Use Spec System?
 
@@ -99,7 +99,7 @@ The system automatically detects your preferred AI tools and creates the necessa
 
 - Quick lookup of all files and their purposes
 - Task-specific reading guides
-- Token count estimates for each file
+- File size and complexity indicators
 - Smart reading strategies to minimize token consumption
 
 ### File Structure Details
@@ -116,7 +116,7 @@ The system automatically detects your preferred AI tools and creates the necessa
 │   ├── analyze-product-cmd.md # Existing codebase analysis
 │   ├── phase-orchestrator-cmd.md # Phase-based development
 │   └── markdown-rules-cmd.md # Documentation standards
-├── instructions/       # Detailed instruction files (40k+ tokens)
+├── instructions/       # Detailed instruction files (comprehensive)
 │   ├── plan-product.md # Product planning rules
 │   ├── create-spec.md  # Spec creation rules
 │   ├── execute-tasks.md # Task execution rules

@@ -23,9 +23,9 @@ This index helps AI agents efficiently navigate the Spec System by providing a q
 
 | File | Purpose | When to Read | Token Count |
 |------|---------|--------------|-------------|
-| `start.md` | Project initialization and setup | Starting new project or checking setup | ~2k |
-| `status.md` | Project status and memory system | Checking project state, getting overview | ~3k |
-| `update.md` | Sync code with documentation | After code changes, updating project | ~2k |
+| `start.md` | Project initialization and setup | Starting new project or checking setup | ~4.1k |
+| `status.md` | Project status and memory system | Checking project state, getting overview | ~2.5k |
+| `update.md` | Sync code with documentation | After code changes, updating project | ~2.6k |
 
 ## 🛠️ Instruction Files (Read Based on Task)
 
@@ -33,34 +33,34 @@ This index helps AI agents efficiently navigate the Spec System by providing a q
 
 | File | Purpose | When to Read | Token Count |
 |------|---------|--------------|-------------|
-| `instructions/plan-product.md` | Product planning and documentation | Creating new product, defining mission | ~8k |
-| `instructions/analyze-product.md` | Analyze existing codebase | Working with existing project | ~4k |
+| `instructions/plan-product.md` | Product planning and documentation | Creating new product, defining mission | ~3.1k |
+| `instructions/analyze-product.md` | Analyze existing codebase | Working with existing project | ~1.7k |
 
 ### Feature Development
 
 | File | Purpose | When to Read | Token Count |
 |------|---------|--------------|-------------|
-| `instructions/create-spec.md` | Create feature specifications | Adding new features, creating specs | ~6k |
-| `instructions/execute-tasks.md` | Execute development tasks | Implementing features, coding | ~8k |
-| `instructions/phase-orchestrator.md` | Phase-based development | Managing project phases | ~6k |
+| `instructions/create-spec.md` | Create feature specifications | Adding new features, creating specs | ~3.6k |
+| `instructions/execute-tasks.md` | Execute development tasks | Implementing features, coding | ~4.3k |
+| `instructions/phase-orchestrator.md` | Phase-based development | Managing project phases | ~2.4k |
 
 ### Project Management
 
 | File | Purpose | When to Read | Token Count |
 |------|---------|--------------|-------------|
-| `instructions/checklist-management.md` | Task tracking and progress | Managing tasks, tracking progress | ~3k |
-| `instructions/ai-logging.md` | AI activity logging | Recording actions, maintaining logs | ~2k |
-| `instructions/config-management.md` | Configuration management | Managing project settings | ~2k |
+| `instructions/checklist-management.md` | Task tracking and progress | Managing tasks, tracking progress | ~2.3k |
+| `instructions/ai-logging.md` | AI activity logging | Recording actions, maintaining logs | ~2.5k |
+| `instructions/config-management.md` | Configuration management | Managing project settings | ~1.5k |
 
 ### Standards & Rules
 
 | File | Purpose | When to Read | Token Count |
 |------|---------|--------------|-------------|
-| `instructions/ai-rules.md` | AI operating rules | Understanding AI behavior rules | ~3k |
-| `instructions/markdown-rules.md` | Documentation standards | Writing documentation | ~2k |
-| `standards/code-style.md` | Code formatting rules | Writing code, style enforcement | ~2k |
-| `standards/tech-stack.md` | Technology choices | Tech decisions, stack setup | ~2k |
-| `standards/best-practices.md` | Development philosophy | Understanding project approach | ~2k |
+| `instructions/ai-rules.md` | AI operating rules | Understanding AI behavior rules | ~2.3k |
+| `instructions/markdown-rules.md` | Documentation standards | Writing documentation | ~2.4k |
+| `standards/code-style.md` | Code formatting rules | Writing code, style enforcement | ~3.2k |
+| `standards/tech-stack.md` | Technology choices | Tech decisions, stack setup | ~0.2k |
+| `standards/best-practices.md` | Development philosophy | Understanding project approach | ~0.2k |
 
 ## 📋 Task-Specific Reading Guides
 
@@ -68,41 +68,41 @@ This index helps AI agents efficiently navigate the Spec System by providing a q
 
 **Read these files in order:**
 
-1. `start.md` (2k tokens)
-2. `instructions/plan-product.md` (8k tokens)
-3. `instructions/checklist-management.md` (3k tokens)
-**Total: ~13k tokens**
+1. `start.md` (~4.1k tokens)
+2. `instructions/plan-product.md` (~3.1k tokens)
+3. `instructions/checklist-management.md` (~2.3k tokens)
+**Total: ~9.5k tokens**
 
 ### For Feature Development
 
 **Read these files in order:**
 
-1. `status.md` (3k tokens) - Check current state
-2. `instructions/create-spec.md` (6k tokens) - Create spec
-3. `instructions/execute-tasks.md` (8k tokens) - Implement
-**Total: ~17k tokens**
+1. `status.md` (~2.5k tokens) - Check current state
+2. `instructions/create-spec.md` (~3.6k tokens) - Create spec
+3. `instructions/execute-tasks.md` (~4.3k tokens) - Implement
+**Total: ~10.4k tokens**
 
 ### For Project Status Check
 
 **Read only:**
 
-1. `status.md` (3k tokens)
-**Total: ~3k tokens**
+1. `status.md` (~2.5k tokens)
+**Total: ~2.5k tokens**
 
 ### For Code Updates
 
 **Read these files in order:**
 
-1. `update.md` (2k tokens)
-2. `status.md` (3k tokens) - If need current state
-**Total: ~5k tokens**
+1. `update.md` (~2.6k tokens)
+2. `status.md` (~2.5k tokens) - If need current state
+**Total: ~5.1k tokens**
 
 ### For Documentation Updates
 
 **Read only:**
 
-1. `instructions/markdown-rules.md` (2k tokens)
-**Total: ~2k tokens**
+1. `instructions/markdown-rules.md` (~2.4k tokens)
+**Total: ~2.4k tokens**
 
 ## 🔄 Auto-Generated Files (Reference Only)
 
@@ -132,7 +132,7 @@ These files are created by the system and should be referenced, not read entirel
 ### For Status Checks
 
 ```markdown
-1. Read status.md (3k tokens)
+1. Read status.md (~2.5k tokens)
 2. Reference checklist.md for current tasks
 3. Reference project-memory.md for context
 ```
@@ -140,35 +140,35 @@ These files are created by the system and should be referenced, not read entirel
 ### For Feature Development Workflow
 
 ```markdown
-1. Read create-spec.md (6k tokens)
+1. Read create-spec.md (~3.6k tokens)
 2. Reference mission.md for product context
 3. Reference tech-stack.md for technical context
-4. Read execute-tasks.md (8k tokens) when ready to implement
+4. Read execute-tasks.md (~4.3k tokens) when ready to implement
 ```
 
 ### For Project Updates
 
 ```markdown
-1. Read update.md (2k tokens)
+1. Read update.md (~2.6k tokens)
 2. Reference ai-log.md for recent changes
 3. Reference decisions.md for context
 ```
 
 ## 📊 Token Usage Optimization
 
-### Minimal Reading (3-5k tokens)
+### Minimal Reading (2-5k tokens)
 
 - Status checks
 - Quick updates
 - Documentation reviews
 
-### Standard Reading (8-15k tokens)
+### Standard Reading (5-10k tokens)
 
 - Feature development
 - Project planning
 - Task execution
 
-### Comprehensive Reading (15-25k tokens)
+### Comprehensive Reading (10-15k tokens)
 
 - New project setup
 - Major refactoring
