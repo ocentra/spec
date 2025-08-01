@@ -1,0 +1,78 @@
+# Spec System Development .gitignore
+
+# User-specific files that should not be committed
+[PROJECT_NAME]-spec/
+*-spec/
+checklist.md
+project-memory.md
+ai-log.md
+config.yml
+
+# AI assistant configurations (user-specific)
+.cursor/
+.claude/
+.gemini/
+
+# Development artifacts
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Temporary files
+temp/
+tmp/
+cache/
+
+# Backup files
+*.backup
+*.old
+*.orig
+
+# Test files (if any)
+test-output/
+coverage/
+
+# Documentation builds
+docs/_build/
+site/
+
+# Node modules (if any development dependencies)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if any development dependencies)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Java (if any development dependencies)
+*.class
+*.jar
+*.war
+*.ear
+target/
+build/
+
+# Keep the setup script in the repository
+!setup.sh 
