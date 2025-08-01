@@ -85,12 +85,15 @@ AI: "Let me create your project structure..."
 ```
 
 #### **Phase 3: Specification Creation** (`create-spec.md`)
+
 For each new feature, a detailed specification is created. This includes user stories, scope, technical requirements, and potentially database and API specifications. The output is a set of "sub-spec" documents.
 
 #### **Phase 4: Task Execution** (`execute-tasks.md`)
+
 Once a spec is approved, the work is broken down into a `tasks.md` file. The AI then executes these tasks, following a Test-Driven Development (TDD) approach where tests are often the first sub-task.
 
 #### **Phase 5: Status and Updates** (`status.md`, `update.md`)
+
 The system provides commands to check the current project status and to synchronize the documentation with the actual state of the codebase.
 
 ### File Architecture
