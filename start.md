@@ -710,3 +710,23 @@ Ready to continue development?
 ***IMPORTANT! IMPORTANT! IMPORTANT! Under no circumstance can we skip steps and it's IMPORTANT! to Verify Before we move to next Step***
 
 ***CRITICAL ENFORCEMENT: ALL SPEC-RELATED TASKS MUST BE COMPLETED AND VERIFIED BEFORE ANY PROJECT-CENTRIC CODE IS WRITTEN***
+
+## 🚨 EARLY CODE WRITING SPECIFIC WARNINGS
+
+### DO NOT JUMP TO CODE WRITING
+
+**COMMON MISTAKE**: Starting to write project code before completing specifications.
+
+**CORRECT BEHAVIOR**:
+
+1. Complete ALL spec writing first
+2. Verify all documentation is finished
+3. Only then proceed to code implementation
+
+**WRONG BEHAVIOR**:
+
+- Writing code while specs are incomplete
+- Skipping documentation to start coding
+- Ignoring the spec completion requirement
+
+**REMEMBER**: Spec System enforces "Spec First, Code Second" - this is non-negotiable.

@@ -1,3 +1,11 @@
+---
+description: Spec System - Gemini Instructions
+globs:
+alwaysApply: false
+version: 1.0
+encoding: UTF-8
+---
+
 # Spec System - Gemini Instructions
 
 This file provides Gemini with instructions on how to use the Spec System for project management and development.
@@ -62,10 +70,14 @@ The Spec System is a comprehensive project management framework that provides st
 
 ## How to Use Commands
 
-1. **Identify the user's intent**: Determine what they want to accomplish
-2. **Select the appropriate command**: Choose the command that best matches their needs
-3. **Follow the detailed instructions**: Each command has comprehensive instructions in the specified file
-4. **Execute step by step**: Follow the instructions carefully for best results
+1. **Check file structure first**: Use `@FILE_INDEX.md` to understand the complete file structure and optimize token usage
+2. **Understand system architecture**: Read `@ARCHITECTURE.md` to understand static instruction patterns and file locations
+3. **Identify the user's intent**: Determine what they want to accomplish
+4. **Select the appropriate command**: Choose the command that best matches their needs
+5. **Follow the detailed instructions**: Each command has comprehensive instructions in the specified file
+6. **Execute step by step**: Follow the instructions carefully for best results
+
+**🚨 CRITICAL**: Before executing any development tasks, ensure ALL spec writing is complete.
 
 ## File Structure Reference
 
@@ -74,12 +86,48 @@ The Spec System is a comprehensive project management framework that provides st
 - `standards/` - Best practices, code style, and tech stack guidelines
 - `config.yml` - Configuration settings
 
+**For complete file structure and token optimization**: See `@FILE_INDEX.md`
+**For system architecture understanding**: See `@ARCHITECTURE.md`
+
 ## Important Notes
 
 - **Always follow the detailed instructions**: Each command has comprehensive instructions that should be followed exactly
-- **Check file structure first**: Use `FILE_INDEX.md` to understand the complete file structure
+- **Check file structure first**: Use `@FILE_INDEX.md` to understand the complete file structure and optimize token usage
+- **Understand system architecture**: Read `@ARCHITECTURE.md` to understand the static instruction patterns and file locations
 - **Follow AI rules**: Always comply with the AI rules in `instructions/ai-rules.md`
 - **Use markdown rules**: Follow the markdown formatting rules in `instructions/markdown-rules.md`
+
+## 🚨 CRITICAL ENFORCEMENT RULES
+
+### NO PROJECT CODE WRITING UNTIL SPECS ARE COMPLETE
+
+**MANDATORY**: You MUST complete ALL spec-related tasks before writing any project code.
+
+**REQUIRED BEFORE ANY CODE:**
+
+1. ✅ Project planning and mission definition
+2. ✅ Tech stack analysis and documentation  
+3. ✅ Product roadmap creation
+4. ✅ Feature specification development
+5. ✅ Task breakdown and prioritization
+6. ✅ All spec files complete and validated
+
+**BLOCKING RULE**: Do not proceed to code implementation until ALL specs are finalized.
+
+**ENFORCEMENT**: This rule applies to ALL project phases and cannot be bypassed.
+
+### SPEC COMPLETION VERIFICATION [IMPORTANT!]
+
+Before writing any project code, verify:
+
+- [ ] Mission document is complete
+- [ ] Tech stack is documented
+- [ ] Roadmap is finalized
+- [ ] Feature specs are written
+- [ ] Tasks are broken down
+- [ ] All documentation is validated
+
+**IF ANY SPEC ITEMS ARE INCOMPLETE**: Stop and complete them first.
 
 ## Quick Reference
 
@@ -97,6 +145,7 @@ The Spec System is a comprehensive project management framework that provides st
 ## Error Handling
 
 If you encounter issues:
+
 1. Check if the required files exist
 2. Verify the project structure is correct
 3. Follow the error handling procedures in the instruction files
@@ -108,4 +157,24 @@ If you encounter issues:
 - Follow the step-by-step process outlined in each command
 - Maintain consistency with project standards
 - Update project memory and logs as instructed
-- Provide clear feedback to the user throughout the process 
+- Provide clear feedback to the user throughout the process
+
+## 🚨 GEMINI-SPECIFIC WARNINGS
+
+### DO NOT JUMP TO CODE WRITING
+
+**COMMON GEMINI MISTAKE**: Starting to write project code before completing specifications.
+
+**CORRECT BEHAVIOR**:
+
+1. Complete ALL spec writing first
+2. Verify all documentation is finished
+3. Only then proceed to code implementation
+
+**WRONG BEHAVIOR**:
+
+- Writing code while specs are incomplete
+- Skipping documentation to start coding
+- Ignoring the spec completion requirement
+
+**REMEMBER**: Spec System enforces "Spec First, Code Second" - this is non-negotiable.
