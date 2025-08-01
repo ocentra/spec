@@ -33,9 +33,13 @@ Maintains comprehensive logs of all AI actions, decisions, and errors for audita
 ## Session Information
 
 - **Session Start**: [TIMESTAMP]
+- **Session Type**: [NEW_SESSION/CONTINUING_SESSION]
+- **Local Time**: [LOCAL_TIMEZONE_TIME]
+- **Previous Session**: [LAST_SESSION_TIMESTAMP] (if continuing)
 - **Project**: [PROJECT_NAME]
 - **AI Agent**: [AGENT_IDENTIFIER]
 - **Mode**: [INTERACTIVE/AUTONOMOUS/DRY_RUN]
+- **Time-Based Sync Strategy**: [ENABLED/DISABLED]
 
 ## Activity Log
 
@@ -79,12 +83,16 @@ Maintains comprehensive logs of all AI actions, decisions, and errors for audita
 ## Session Summary
 
 - **Session End**: [TIMESTAMP]
+- **Session Duration**: [TOTAL_DURATION]
 - **Total Actions**: [COUNT]
 - **Errors Encountered**: [COUNT]
 - **Decisions Made**: [COUNT]
 - **Files Created**: [COUNT]
 - **Files Modified**: [COUNT]
 - **User Interactions**: [COUNT]
+- **Sync Points Triggered**: [COUNT]
+- **Git Commits Made**: [COUNT]
+- **Next Recommended Sync**: [TIMESTAMP]
 ```
 
 ### Step 2: Log Entry Creation
@@ -298,6 +306,80 @@ Maintains comprehensive logs of all AI actions, decisions, and errors for audita
 - **REDACTION**: Remove or mask sensitive data
 - **ENCRYPTION**: Encrypt logs containing sensitive information
 - **ACCESS**: Control access to log files
+
+## 🕐 Time-Based Workflow Management
+
+### Session Detection and Time Tracking
+
+#### Session Type Detection
+
+- **NEW_SESSION**: First interaction of the day or after 8+ hours of inactivity
+- **CONTINUING_SESSION**: Within same day or less than 8 hours from last session
+- **DETECTION_METHOD**: Compare current timestamp with last session end time
+
+#### Local Time Detection
+
+- **SYSTEM_TIME**: Use local system time for timezone-aware decisions
+- **TIMEZONE_AWARE**: Consider user's local timezone for sync decisions
+- **DAY_BOUNDARIES**: Detect start of day (6 AM) and end of day (6 PM)
+
+#### Smart Sync Point Detection
+
+- **TASK_COMPLETE**: When a major task or subtask is finished
+- **END_OF_DAY**: Approaching 6 PM local time
+- **START_OF_DAY**: Beginning of new day (6 AM+)
+- **MAJOR_MILESTONE**: Significant progress or phase completion
+- **NATURAL_BREAK**: Logical stopping point in development
+
+### Time-Based Git Workflow
+
+#### Natural Sync Points
+
+- **TASK_COMPLETION**: Commit when a task or major subtask is done
+- **END_OF_DAY**: Pull and commit at end of work day (6 PM)
+- **START_OF_DAY**: Pull from main at start of new day
+- **MAJOR_MILESTONE**: Commit at significant progress points
+- **USER_REQUEST**: When user explicitly requests sync
+
+#### Session-Based Workflow
+
+- **NEW_SESSION_START**: Always pull from main at session start
+- **CONTINUING_SESSION**: Check if pull is needed based on time elapsed
+- **SESSION_END**: Commit current work and push if significant changes
+
+#### Time Detection Methods
+
+- **SYSTEM_CLOCK**: Use local system time
+- **SESSION_DURATION**: Track time since session start
+- **LAST_ACTIVITY**: Time since last significant action
+- **USER_PATTERNS**: Learn from user's typical work patterns
+
+### Implementation Guidelines
+
+#### Time Detection Commands
+
+```bash
+# Get local time
+date
+# Get timezone
+date +%Z
+# Get timestamp for comparison
+date +%s
+```
+
+#### Session Continuity Check
+
+- **CHECK**: Last session end time from ai-log.md
+- **COMPARE**: Current time vs. last session time
+- **DECIDE**: New session if >8 hours elapsed
+- **LOG**: Session type in current log entry
+
+#### Smart Commit Strategy
+
+- **AUTO_COMMIT**: At task completion and end of day
+- **MANUAL_COMMIT**: When user requests or at major milestones
+- **PUSH_STRATEGY**: Push at end of day or when user requests
+- **PULL_STRATEGY**: Pull at start of day and before major changes
 
 ## Configuration Options
 

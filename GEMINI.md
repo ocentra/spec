@@ -16,86 +16,53 @@ The Spec System is a comprehensive project management framework that provides st
 
 ## Available Commands
 
-### Core Project Commands
+**DETAILED REFERENCE**: See `@FILE_INDEX.md` → `## 📁 Core Command Files` and `## 🛠️ Instruction Files`
 
-#### @start.md - Start Project
+**ESSENTIAL COMMANDS**:
 
-**When to use**: When starting a new project or continuing an existing one
-**Purpose**: Comprehensive project analysis and setup guidance
-**Instructions**: Follow the detailed instructions in `start.md` for project setup and analysis
-
-#### @plan-product.md - Plan Product
-
-**When to use**: When planning a new product or feature
-**Purpose**: Create comprehensive product documentation and planning
-**Instructions**: Follow the detailed instructions in `instructions/plan-product.md`
-
-#### @analyze-product.md - Analyze Product
-
-**When to use**: When analyzing an existing product or codebase
-**Purpose**: Analyze current state and provide improvement recommendations
-**Instructions**: Follow the detailed instructions in `instructions/analyze-product.md`
-
-#### @create-spec.md - Create Specification
-
-**When to use**: When creating detailed feature specifications
-**Purpose**: Generate comprehensive technical specifications
-**Instructions**: Follow the detailed instructions in `instructions/create-spec.md`
-
-#### @execute-tasks.md - Execute Tasks
-
-**When to use**: When implementing features or working on development tasks
-**Purpose**: Execute planned tasks with structured guidance
-**Instructions**: Follow the detailed instructions in `instructions/execute-tasks.md`
-
-### Project Management Commands
-
-#### @status.md - Check Status
-
-**When to use**: When checking current project status and progress
-**Purpose**: Generate comprehensive project status reports
-**Instructions**: Follow the detailed instructions in `status.md`
-
-#### @update.md - Update Project
-
-**When to use**: When syncing code with documentation and updating project state
-**Purpose**: Update project documentation and identify discrepancies
-**Instructions**: Follow the detailed instructions in `update.md`
-
-#### @phase-orchestrator.md - Phase Orchestrator
-
-**When to use**: When managing project phases and transitions
-**Purpose**: Orchestrate project phases and manage transitions
-**Instructions**: Follow the detailed instructions in `instructions/phase-orchestrator.md`
+- **@start.md** - Start Project (comprehensive setup guidance)
+- **@status.md** - Check Status (project status and progress)
+- **@update.md** - Update Project (sync code with documentation)
+- **@create-spec.md** - Create Specification (feature specifications)
+- **@execute-tasks.md** - Execute Tasks (development implementation)
+- **@git-management.md** - Git Management (version control)
 
 ## How to Use Commands
 
-1. **Check file structure first**: Use `@FILE_INDEX.md` to understand the complete file structure and optimize token usage
-2. **Understand system architecture**: Read `@ARCHITECTURE.md` to understand static instruction patterns and file locations
-3. **Identify the user's intent**: Determine what they want to accomplish
-4. **Select the appropriate command**: Choose the command that best matches their needs
-5. **Follow the detailed instructions**: Each command has comprehensive instructions in the specified file
-6. **Execute step by step**: Follow the instructions carefully for best results
+**DETAILED GUIDE**: See `@FILE_INDEX.md` → `## 🎯 How to Use This Index`
+
+**QUICK REFERENCE**:
+
+1. Check file structure first using `@FILE_INDEX.md`
+2. Understand system architecture using `@ARCHITECTURE.md`
+3. Identify user's intent and select appropriate command
+4. Follow detailed instructions in the specified file
+5. Execute step by step carefully
 
 **🚨 CRITICAL**: Before executing any development tasks, ensure ALL spec writing is complete.
 
 ## File Structure Reference
+
+**DETAILED REFERENCE**: See `@FILE_INDEX.md` → `## 📁 Core Command Files` and `## 🛠️ Instruction Files`
+
+**QUICK REFERENCE**:
 
 - `commands/` - Command entry points and quick references
 - `instructions/` - Detailed instructions for each command
 - `standards/` - Best practices, code style, and tech stack guidelines
 - `config.yml` - Configuration settings
 
-**For complete file structure and token optimization**: See `@FILE_INDEX.md`
-**For system architecture understanding**: See `@ARCHITECTURE.md`
-
 ## Important Notes
 
-- **Always follow the detailed instructions**: Each command has comprehensive instructions that should be followed exactly
-- **Check file structure first**: Use `@FILE_INDEX.md` to understand the complete file structure and optimize token usage
-- **Understand system architecture**: Read `@ARCHITECTURE.md` to understand the static instruction patterns and file locations
-- **Follow AI rules**: Always comply with the AI rules in `instructions/ai-rules.md`
-- **Use markdown rules**: Follow the markdown formatting rules in `instructions/markdown-rules.md`
+**DETAILED RULES**: See `@ai-rules.md` → `## Core Principles`
+
+**QUICK REFERENCE**:
+
+- Always follow the detailed instructions exactly
+- Check file structure first using `@FILE_INDEX.md`
+- Understand system architecture using `@ARCHITECTURE.md`
+- Follow AI rules in `@ai-rules.md`
+- Use markdown rules in `@markdown-rules.md`
 
 ## 🚨 CRITICAL ENFORCEMENT RULES
 
@@ -131,30 +98,35 @@ Before writing any project code, verify:
 
 ## Quick Reference
 
-| User Intent | Command | Instructions File |
-|-------------|---------|-------------------|
-| Start new project | @start.md | `start.md` |
-| Plan product | @plan-product.md | `instructions/plan-product.md` |
-| Analyze existing product | @analyze-product.md | `instructions/analyze-product.md` |
-| Create feature spec | @create-spec.md | `instructions/create-spec.md` |
-| Execute development tasks | @execute-tasks.md | `instructions/execute-tasks.md` |
-| Check project status | @status.md | `status.md` |
-| Update project docs | @update.md | `update.md` |
-| Manage project phases | @phase-orchestrator.md | `instructions/phase-orchestrator.md` |
+**DETAILED REFERENCE**: See `@FILE_INDEX.md` → `## ⚡ Quick Reference Commands`
+
+**ESSENTIAL COMMANDS**:
+
+- **Start project**: `@start.md`
+- **Check status**: `@status.md`
+- **Create feature**: `@create-spec.md`
+- **Execute tasks**: `@execute-tasks.md`
+- **Update project**: `@update.md`
 
 ## Error Handling
 
-If you encounter issues:
+**DETAILED RULES**: See `@ai-rules.md` → `## Error Handling`
 
-1. Check if the required files exist
-2. Verify the project structure is correct
-3. Follow the error handling procedures in the instruction files
-4. Ask the user for clarification if needed
+**QUICK REFERENCE**:
+
+- Check if required files exist
+- Verify project structure is correct
+- Follow error handling procedures in instruction files
+- Ask user for clarification if needed
 
 ## Best Practices
 
-- Always read the complete instruction file before proceeding
-- Follow the step-by-step process outlined in each command
+**DETAILED RULES**: See `@ai-rules.md` → `## Best Practices`
+
+**QUICK REFERENCE**:
+
+- Read complete instruction file before proceeding
+- Follow step-by-step process outlined in each command
 - Maintain consistency with project standards
 - Update project memory and logs as instructed
 - Provide clear feedback to the user throughout the process
@@ -165,16 +137,39 @@ If you encounter issues:
 
 **COMMON GEMINI MISTAKE**: Starting to write project code before completing specifications.
 
-**CORRECT BEHAVIOR**:
+**DETAILED RULES**: See `@ai-rules.md` → `### 🚨 When in Doubt, Ask - Don't Assume` (Code Implementation section)
 
-1. Complete ALL spec writing first
-2. Verify all documentation is finished
-3. Only then proceed to code implementation
+**QUICK REFERENCE**:
 
-**WRONG BEHAVIOR**:
+- **MANDATORY**: Complete ALL spec writing first
+- **VERIFY**: All documentation is finished
+- **THEN**: Proceed to code implementation
 
-- Writing code while specs are incomplete
-- Skipping documentation to start coding
-- Ignoring the spec completion requirement
+### 🚨 SCOPE CREEP AND GIT WORKFLOW WARNINGS
 
-**REMEMBER**: Spec System enforces "Spec First, Code Second" - this is non-negotiable.
+**COMMON GEMINI MISTAKE**: Touching files outside intended scope and not following proper Git workflow.
+
+**DETAILED RULES**:
+
+- Scope Control: See `@execute-tasks.md` → `#### 🚨 Scope Validation and Control`
+- Git Workflow: See `@git-management.md` → `### 🚨 AI-Assisted Development Branch Strategy`
+
+**QUICK REFERENCE**:
+
+- **SCOPE**: Define exact files to be modified before starting
+- **GIT**: Use `@git-management.md` for all Git operations
+- **BRANCH**: Use `ai/phase-task-description` naming
+- **SYNC**: Pull at natural breakpoints (task completion, end of day)
+- **CONFIRMATION**: Get user approval for scope changes
+
+### 🚨 ASK BEFORE ASSUMING WARNING
+
+**COMMON GEMINI MISTAKE**: Making assumptions when uncertain instead of asking for clarification.
+
+**DETAILED RULES**: See `@ai-rules.md` → `### 🚨 When in Doubt, Ask - Don't Assume`
+
+**QUICK REFERENCE**:
+
+- **CRITICAL PRINCIPLE**: If ANY uncertainty exists, STOP and ask for clarification
+- **APPLIES TO**: Code implementation, file modifications, configuration choices, design decisions, error handling, scope boundaries, technology choices
+- **MANDATORY RULE**: When in doubt, ask - don't assume

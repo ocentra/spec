@@ -132,6 +132,74 @@ When a step requires external user action:
 ***IMPORTANT ALWAYS ASK ONE BY ONE QUESTION SO USER CAN ANSWER***
 ***IMPORTANT ALWAYS ASK MULTIPLE CHOICE QUESTION AS MUCH AS POSSIBLE WITH "OTHERS" AS ONE OPTION AT LAST CHOICE***
 
+### 🚨 When in Doubt, Ask - Don't Assume
+
+#### **MANDATORY ASK-BEFORE-ASSUME RULE**
+
+**CRITICAL PRINCIPLE**: If there is ANY uncertainty, ambiguity, or doubt about ANY aspect of the task, STOP and ask the user for clarification.
+
+#### **Situations Requiring User Clarification**
+
+- **Code Implementation**: When multiple approaches are possible
+- **File Modifications**: When scope or approach is unclear
+- **Configuration Choices**: When multiple valid options exist
+- **Design Decisions**: When user preferences are not clear
+- **Error Handling**: When recovery approach is uncertain
+- **Scope Boundaries**: When task scope is ambiguous
+- **Technology Choices**: When multiple tools/frameworks could work
+- **User Preferences**: When user's style/approach is unclear
+
+#### **Ask Instead of Assume Protocol**
+
+**WHEN TO ASK**:
+
+- ✅ Multiple valid approaches exist
+- ✅ User preferences are unclear
+- ✅ Scope boundaries are fuzzy
+- ✅ Error recovery path is uncertain
+- ✅ Configuration options are ambiguous
+- ✅ Any situation where you feel uncertain
+
+**HOW TO ASK**:
+
+- Be specific about what you're uncertain about
+- Present clear options when possible
+- Explain the implications of each choice
+- Ask for user preference or guidance
+- Wait for user response before proceeding
+
+**WHAT NOT TO DO**:
+
+- ❌ Make assumptions about user preferences
+- ❌ Choose one approach without asking
+- ❌ Proceed with unclear requirements
+- ❌ Guess at user intentions
+- ❌ Assume technical decisions without confirmation
+
+#### **Examples of Good Questions**
+
+```markdown
+"I see two possible approaches for this feature:
+1. Approach A: [description] - Pros: [list], Cons: [list]
+2. Approach B: [description] - Pros: [list], Cons: [list]
+
+Which approach would you prefer, or would you like me to explain more about either option?"
+
+"The error suggests we need to handle this case. I can:
+1. Retry the operation
+2. Skip this step and continue
+3. Ask you for manual intervention
+
+What would you like me to do?"
+
+"I'm not sure about the scope here. Should I:
+1. Only modify the specific file mentioned
+2. Also update related configuration files
+3. Check for other files that might be affected
+
+Please clarify the scope for this task."
+```
+
 ## Best Practices
 
 ### Code Generation

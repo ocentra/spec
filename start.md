@@ -444,6 +444,12 @@ ELSE:
 - **PROVIDE**: All context as structured input
 - **ALLOW**: plan-product.md to create [PROJECT_NAME]-spec/ structure (project root)
 
+### Git Repository Setup
+
+- **ACTION**: Follow Git management instructions
+- **REFERENCE**: Use `@git-management.md` for complete Git setup and management
+- **PURPOSE**: Initialize repository and set up version control
+
 ### Next Steps Guidance
 
 - **ACTION**: Provide clear next steps to user
@@ -451,6 +457,8 @@ ELSE:
   - Link to generated documentation
   - Instructions for reviewing and customizing
   - How to proceed with development
+  - Git repository status and next steps
+  - Reminder to commit changes regularly
 
 ### CRITICAL: Spec Completion Before Code Writing
 

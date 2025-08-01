@@ -139,6 +139,23 @@ Exclude date prefix
 - Folder: 2025-03-15-password-reset
 - Branch: password-reset
 
+##### 🚨 AI-Assisted Development Branch Strategy
+
+###### AI-Specific Branch Naming
+
+- **PATTERN**: `ai/phase-task-description`
+- **EXAMPLES**:
+  - `ai/planning-user-authentication`
+  - `ai/spec-payment-integration`
+  - `ai/development-api-endpoints`
+
+###### Scope Control Protocol
+
+- **FILE MODIFICATION LIMITS**: Only touch files explicitly in scope
+- **SCOPE VALIDATION**: Check file modifications against task scope
+- **USER CONFIRMATION**: Require approval for scope expansion
+- **REGULAR SYNC**: Pull from main every 30 minutes during development
+
 ##### Branch Logic
 
 IF current branch name matches spec name:
@@ -154,6 +171,29 @@ ELSE:
     → Ask permission to create new branch
     → Wait for user approval
     → Create branch only if approved
+
+##### 🚨 AI-Specific Branch Workflow
+
+###### Pre-Task Setup
+
+1. **Pull from main**: `git pull origin main` (prevent conflicts)
+2. **Create AI branch**: `git checkout -b ai/[task-name]`
+3. **Verify scope**: Confirm files to be modified
+4. **User confirmation**: Get approval for scope
+
+###### During Development
+
+1. **Smart sync**: Pull from main at natural breakpoints (task completion, end of day)
+2. **Scope validation**: Only modify files in scope
+3. **User confirmation**: Require approval for scope changes
+4. **Commit at milestones**: Commit when tasks complete or at end of day
+
+###### Pre-Merge Protocol
+
+1. **Final pull**: `git pull origin main`
+2. **Conflict resolution**: Resolve any conflicts
+3. **User review**: Get approval for changes
+4. **Test integration**: Verify changes work with main
 
 ###### Case C Prompt
 
@@ -173,6 +213,78 @@ May I create a new branch for this spec? (yes/no)
 - **EVALUATE**: Which case applies
 - **EXECUTE**: Appropriate branch action
 - **WAIT**: Only for case C approval
+
+#### 🚨 Scope Validation and Control
+
+##### Scope Validation Purpose
+
+Prevent scope creep and ensure AI only modifies intended files
+
+##### Scope Validation Process
+
+###### Pre-Task Scope Definition
+
+- **ACTION**: Define exact files to be modified
+- **LIST**: All files that will be touched
+- **CONFIRM**: User approval for file list
+- **DOCUMENT**: Scope in task execution log
+
+###### During Development Scope Check
+
+- **ACTION**: Validate each file modification against scope
+- **CHECK**: Is file in approved scope list?
+- **IF YES**: Proceed with modification
+- **IF NO**: Request user approval for scope expansion
+
+###### Scope Expansion Protocol
+
+- **TRIGGER**: When file outside scope needs modification
+- **ACTION**: Request user approval
+- **PROMPT**: "File [filename] is outside current scope. May I include it? (yes/no)"
+- **UPDATE**: Scope list if approved
+- **LOG**: All scope changes in execution log
+
+##### Instructions for Scope Control
+
+- **ACTION**: Define scope before starting task
+- **VALIDATE**: Each file modification against scope
+- **REQUEST**: User approval for scope changes
+- **LOG**: All scope modifications
+- **ENFORCE**: Strict adherence to approved scope
+
+#### 🕐 Time-Based Workflow Integration
+
+##### Session Detection
+
+- **CHECK**: Last session end time from ai-log.md
+- **COMPARE**: Current time vs. last session time
+- **DETECT**: New session if >8 hours elapsed
+- **PULL**: Always pull from main at session start
+
+##### Natural Sync Points
+
+- **TASK_COMPLETION**: Pull and commit when task is done
+- **END_OF_DAY**: Pull and commit at 6 PM local time
+- **START_OF_DAY**: Pull from main at start of new day
+- **MAJOR_MILESTONE**: Commit at significant progress points
+
+##### Time Detection Commands
+
+```bash
+# Get local time for decisions
+date
+# Get timezone
+date +%Z
+# Get timestamp for comparison
+date +%s
+```
+
+##### Smart Commit Strategy
+
+- **AUTO_COMMIT**: At task completion and end of day
+- **MANUAL_COMMIT**: When user requests or at major milestones
+- **PUSH_STRATEGY**: Push at end of day or when user requests
+- **PULL_STRATEGY**: Pull at start of day and before major changes
 
 ### Step 3: Single Task Execution (For Each Task)
 
