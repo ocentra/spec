@@ -57,9 +57,11 @@ It essentially acts as a highly detailed instruction manual or a "senior develop
 ### Development Workflow
 
 #### **Phase 1: Initialization** (`start.md`)
+
 A new or existing project is identified. The system configures the AI assistant and can initiate the planning phase.
 
 #### **Phase 2: Product Planning** (`plan-product.md`)
+
 The user is prompted for the project's vision, key features, target users, and technology stack. This information is used to generate foundational documents like `mission.md`, `roadmap.md`, and `tech-stack.md`.
 
 **Interactive Process**: Spec System doesn't just generate files—it **interactively guides you** through the entire development process:
@@ -108,6 +110,7 @@ The `.spec/` directory contains a shared instruction library that serves as the 
 When you first run `@start` and `@plan-product`, Spec System automatically generates several key files:
 
 **Project Documentation:**
+
 - **`[PROJECT_NAME]-spec/product/mission.md`** - Complete product vision with pitch, users, problems, and features
 - **`[PROJECT_NAME]-spec/product/tech-stack.md`** - Technology choices and configurations
 - **`[PROJECT_NAME]-spec/product/roadmap.md`** - Development phases and feature timeline
@@ -115,11 +118,13 @@ When you first run `@start` and `@plan-product`, Spec System automatically gener
 - **`[PROJECT_NAME]-spec/product/mission-lite.md`** - Condensed mission for AI context efficiency
 
 **Project Management:**
+
 - **`[PROJECT_NAME]-spec/project-memory.md`** - AI's persistent memory and context tracking
 - **`[PROJECT_NAME]-spec/checklist.md`** - Task completion tracking and progress
 - **`[PROJECT_NAME]-spec/ai-log.md`** - Detailed activity log and audit trail
 
 **AI Assistant Configuration:**
+
 - **`.cursor/rules/`** - Cursor IDE configuration files
 - **`.claude/`** - Claude Code configuration files  
 - **`GEMINI.md`** - Gemini configuration file
