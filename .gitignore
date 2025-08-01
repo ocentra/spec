@@ -11,7 +11,7 @@ config.yml
 # AI assistant configurations (user-specific)
 .cursor/
 .claude/
-.gemini/
+# Gemini configuration is now GEMINI.md (not a directory)
 
 # Development artifacts
 *.log

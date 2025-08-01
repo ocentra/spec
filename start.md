@@ -35,11 +35,11 @@ The start command should:
 
 ### Check AI Assistant Directories
 
-- **ACTION**: Check if AI assistant configuration directories exist
-- **DIRECTORIES TO CHECK**:
+- **ACTION**: Check if AI assistant configuration directories and files exist
+- **DIRECTORIES/FILES TO CHECK**:
   - `.cursor/rules/` (for Cursor IDE)
   - `.claude/` (for Claude Code)
-  - `.gemini/` (for Gemini)
+  - `GEMINI.md` (for Gemini)
 - **CONDITION**: If missing, ask user which assistants they want to configure
 - **PURPOSE**: Enable AI assistants to access Spec commands
 
@@ -50,7 +50,7 @@ The start command should:
 - **OPTIONS**:
   - "Cursor IDE" - Create `.cursor/rules/` files
   - "Claude Code" - Create `.claude/` configuration files
-  - "Gemini" - Create `.gemini/` configuration files
+  - "Gemini" - Create `GEMINI.md` configuration file
   - "Multiple assistants" - Create configs for selected assistants
   - "None, skip AI assistant setup" - Skip all AI assistant setup
   - "I'll set it up later" - Skip all AI assistant setup
@@ -64,7 +64,7 @@ The start command should:
 - **LOCATIONS**:
   - `.cursor/rules/` (for Cursor IDE)
   - `.claude/` (for Claude Code)
-  - `.gemini/` (for Gemini)
+  - `GEMINI.md` (for Gemini)
 - **CONTENT**: Simple pointers to Spec commands
 - **FORMAT**: Markdown with YAML frontmatter
 - **CONDITION**: Only proceed for assistants user selects
@@ -105,22 +105,50 @@ When user wants to [command action], use this command.
 This command provides [brief explanation of what the command does].
 ```
 
-#### Gemini Template (.gemini/)
+#### Gemini Template (GEMINI.md)
 
-For each command file in `.spec/commands/`, create a corresponding `.md` file:
+Create a single comprehensive `GEMINI.md` file in the project root:
 
 ```markdown
-# [Command Name]
+# Spec System - Gemini Instructions
 
-[Brief description of what this command does]
+This file provides Gemini with instructions on how to use the Spec System for project management and development.
 
-Refer to the instructions located in @.spec/[command-name].md
+## Available Commands
 
-## When to Use
-Use this command when [specific use case].
+### @start.md - Start Project
+**When to use**: When starting a new project or continuing an existing one
+**Instructions**: Follow the detailed instructions in `start.md`
 
-## Instructions
-Follow the detailed instructions in @.spec/[command-name].md
+### @plan-product.md - Plan Product
+**When to use**: When planning a new product or feature
+**Instructions**: Follow the detailed instructions in `instructions/plan-product.md`
+
+### @analyze-product.md - Analyze Product
+**When to use**: When analyzing an existing product or codebase
+**Instructions**: Follow the detailed instructions in `instructions/analyze-product.md`
+
+### @create-spec.md - Create Specification
+**When to use**: When creating detailed feature specifications
+**Instructions**: Follow the detailed instructions in `instructions/create-spec.md`
+
+### @execute-tasks.md - Execute Tasks
+**When to use**: When implementing features or working on development tasks
+**Instructions**: Follow the detailed instructions in `instructions/execute-tasks.md`
+
+### @status.md - Check Status
+**When to use**: When checking current project status and progress
+**Instructions**: Follow the detailed instructions in `status.md`
+
+### @update.md - Update Project
+**When to use**: When syncing code with documentation and updating project state
+**Instructions**: Follow the detailed instructions in `update.md`
+
+## How to Use Commands
+1. Identify the user's intent
+2. Select the appropriate command
+3. Follow the detailed instructions in the specified file
+4. Execute step by step for best results
 ```
 
 ### Required AI Assistant Configuration Files
@@ -153,19 +181,18 @@ Create the following `.md` files:
 8. **markdown-rules.md** - Markdown writing rules
 9. **ai-rules.md** - AI operating rules
 
-#### Gemini (.gemini/)
+#### Gemini (GEMINI.md)
 
-Create the following `.md` files:
+Create a single comprehensive `GEMINI.md` file in the project root containing:
 
-1. **start.md** - Project start command
-2. **plan-product.md** - Product planning command
-3. **analyze-product.md** - Product analysis command
-4. **create-spec.md** - Spec creation command
-5. **execute-tasks.md** - Task execution command
-6. **status.md** - Status check command
-7. **update.md** - Project update command
-8. **markdown-rules.md** - Markdown writing rules
-9. **ai-rules.md** - AI operating rules
+1. **Overview** - System description and purpose
+2. **Available Commands** - All command references with usage instructions
+3. **How to Use Commands** - Step-by-step guidance
+4. **File Structure Reference** - Directory and file explanations
+5. **Important Notes** - Key guidelines and best practices
+6. **Quick Reference** - Command lookup table
+7. **Error Handling** - Troubleshooting guidance
+8. **Best Practices** - Usage recommendations
 
 ### Example AI Assistant Configuration Content
 
@@ -204,20 +231,30 @@ When user wants to start a new project or continue development on an existing pr
 This command provides comprehensive project analysis, setup guidance, and clear next steps for both new and existing projects.
 ```
 
-#### Gemini Example (start.md)
+#### Gemini Example (GEMINI.md)
 
 ```markdown
-# Start Project
+# Spec System - Gemini Instructions
 
-Begin a new project or continue an existing one with comprehensive project analysis and setup
+This file provides Gemini with instructions on how to use the Spec System for project management and development.
 
-Refer to the instructions located in @.spec/start.md
+## Available Commands
 
-## When to Use
-Use this command when starting a new project or when returning to an existing project that needs analysis and guidance.
+### @start.md - Start Project
+**When to use**: When starting a new project or continuing an existing one
+**Purpose**: Comprehensive project analysis and setup guidance
+**Instructions**: Follow the detailed instructions in `start.md`
 
-## Instructions
-Follow the detailed instructions in @.spec/start.md for project setup and analysis.
+### @plan-product.md - Plan Product
+**When to use**: When planning a new product or feature
+**Purpose**: Create comprehensive product documentation and planning
+**Instructions**: Follow the detailed instructions in `instructions/plan-product.md`
+
+## How to Use Commands
+1. Identify the user's intent
+2. Select the appropriate command
+3. Follow the detailed instructions in the specified file
+4. Execute step by step for best results
 ```
 
 #### plan-product.mdc Example

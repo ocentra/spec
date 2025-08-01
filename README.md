@@ -64,7 +64,7 @@ When you use Spec System, it creates project-specific documentation:
 
 Spec System integrates with your existing workflow:
 
-- **AI Tool Configuration** - Creates `.cursor/`, `.claude/`, `.gemini/` files
+- **AI Tool Configuration** - Creates `.cursor/`, `.claude/`, `GEMINI.md` files
 - **Project Documentation** - Generates mission, roadmap, and technical specs
 - **Development Tracking** - Maintains progress and context across sessions
 
@@ -87,7 +87,7 @@ Spec System works with all major AI coding tools. After running `@start.md`, you
 
 - **Cursor IDE** - Creates `.cursor/rules/` files
 - **Claude Code** - Creates `.claude/` configuration
-- **Gemini** - Creates `.gemini/` configuration
+- **Gemini** - Creates `GEMINI.md` configuration
 - **Other AI tools** - Manual setup instructions provided
 
 The system automatically detects your preferred AI tools and creates the necessary configuration files.
@@ -149,7 +149,7 @@ your-project/
 ├── .cursor/           # Cursor IDE configuration
 │   └── rules/        # AI assistant rules
 ├── .claude/          # Claude Code configuration (if using)
-├── .gemini/          # Gemini configuration (if using)
+├── GEMINI.md         # Gemini configuration (if using)
 ├── [PROJECT_NAME]-spec/  # Project-specific documentation
 │   ├── product/      # Product documentation
 │   │   ├── mission.md # Product vision and goals
@@ -199,7 +199,7 @@ When you first run `@start` and `@plan-product`, Spec System automatically gener
 
 - **`.cursor/rules/`** - Cursor IDE configuration files
 - **`.claude/`** - Claude Code configuration files  
-- **`.gemini/`** - Gemini configuration files
+- **`GEMINI.md`** - Gemini configuration file
 
 #### **What to Expect During Setup**
 
@@ -281,7 +281,7 @@ AI can seamlessly switch between:
 
 - **`.cursor/rules/`**: Enables AI commands in Cursor IDE
 - **`.claude/`**: Provides context for Claude Code
-- **`.gemini/`**: Configures Gemini AI assistance
+- **`GEMINI.md`**: Configures Gemini AI assistance
 
 #### **Project Documentation**
 
