@@ -41,6 +41,27 @@ Spec System is completely yours to shape. Define your own coding standards, writ
 
 Spec System works through a **static instruction library** that AI agents follow. Think of it as a comprehensive rulebook that tells AI exactly how to behave like a senior developer on your team.
 
+It essentially acts as a highly detailed instruction manual or a "senior developer in a box" that enforces a specific, opinionated workflow. The core idea is to move away from chaotic and iterative prompting towards a more disciplined, spec-driven development process.
+
+### Core Principles
+
+- **Static and Reusable Instructions**: The `.spec/` directory contains a library of immutable instructions, standards, and commands that are meant to be read-only for the AI. This ensures consistency across projects.
+- **Project-Specific Generation**: For each project, the system generates a `[PROJECT_NAME]-spec/` directory, which holds all the project-specific artifacts like the product mission, roadmap, and decision logs.
+- **Spec-Driven Development**: A crucial and heavily enforced rule is that no application code should be written until all specifications are complete. This includes defining the product, technology stack, roadmap, and breaking down features into detailed tasks.
+- **Comprehensive Documentation**: The system automates the creation of a wide range of documentation, from high-level product vision to detailed technical specifications and API schemas.
+- **AI-Agnostic with Configuration**: It's designed to work with various AI coding assistants (Cursor, Claude, Gemini) by generating the necessary configuration files to integrate them into the workflow.
+- **Phase-Based Orchestration**: The development process is broken down into distinct phases, which are executed sequentially, ensuring that prerequisites are met before moving to the next stage.
+- **Memory and Logging**: The system maintains a `project-memory.md` for context and a detailed `ai-log.md` to track all actions, decisions, and errors, providing transparency and auditability.
+- **User-Centric Workflow**: While highly automated, the system includes numerous checkpoints for user input, review, and approval, ensuring the final product aligns with the user's vision.
+
+### Workflow Overview
+
+- **Initialization** (`start.md`): A new or existing project is identified. The system configures the AI assistant and can initiate the planning phase.
+- **Product Planning** (`plan-product.md`): The user is prompted for the project's vision, key features, target users, and technology stack. This information is used to generate foundational documents like `mission.md`, `roadmap.md`, and `tech-stack.md`.
+- **Specification Creation** (`create-spec.md`): For each new feature, a detailed specification is created. This includes user stories, scope, technical requirements, and potentially database and API specifications. The output is a set of "sub-spec" documents.
+- **Task Execution** (`execute-tasks.md`): Once a spec is approved, the work is broken down into a `tasks.md` file. The AI then executes these tasks, following a Test-Driven Development (TDD) approach where tests are often the first sub-task.
+- **Status and Updates** (`status.md`, `update.md`): The system provides commands to check the current project status and to synchronize the documentation with the actual state of the codebase.
+
 ### Static Instructions (Shared Foundation)
 
 The `.spec/` directory contains a shared instruction library that serves as the foundation for all projects:
@@ -492,6 +513,109 @@ This is a static instruction system designed for continuous improvement. The `.s
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
+
+## ❓ Frequently Asked Questions
+
+<details>
+<summary><strong>What is Spec System?</strong></summary>
+
+Spec System is a comprehensive, static instruction library designed to make AI agents work like senior developers on your team. It provides structured workflows, coding standards, and development processes that transform chaotic AI prompting into predictable, consistent development.
+
+</details>
+
+<details>
+<summary><strong>What is 'spec-driven development'?</strong></summary>
+
+Spec-driven development is a methodology where all application code is written only after complete specifications are finalized. This includes product definition, technology stack decisions, feature breakdowns, and detailed task specifications. The system enforces this rule strictly to ensure proper planning before implementation.
+
+</details>
+
+<details>
+<summary><strong>What makes Spec System different?</strong></summary>
+
+Unlike basic AI setups, Spec System provides:
+
+- **Complete Context**: Not just prompts, but comprehensive instructions that work together
+- **Structured Workflow**: Replaces random prompting with proven, phase-based development
+- **Your Standards**: Completely customizable to match your team's preferences
+- **AI-Agnostic**: Works with any AI tool (Cursor, Claude, Gemini, etc.)
+- **Memory & Logging**: Maintains context and provides full auditability
+
+</details>
+
+<details>
+<summary><strong>Who created Spec System and what was the idea?</strong></summary>
+
+Spec System was created to address the common struggles developers face with AI-assisted development. After observing many people struggle with chaotic AI workflows, inconsistent code quality, and the need to constantly re-explain requirements, the system was designed to provide a "senior developer in a box" experience that enforces disciplined, spec-driven development processes.
+
+</details>
+
+<details>
+<summary><strong>How does Spec System manage context efficiently?</strong></summary>
+
+The system uses several strategies:
+
+- **Smart File Index**: `FILE_INDEX.md` helps AI choose only necessary files
+- **Task-Specific Reading**: Different workflows require different instruction sets
+- **Reference vs. Read**: Auto-generated files are referenced, not read entirely
+- **Memory System**: `project-memory.md` maintains persistent context across sessions
+- **Token Optimization**: Reading guides help minimize token consumption
+
+</details>
+
+<details>
+<summary><strong>Does Spec System support Claude, Gemini, and other AI assistants?</strong></summary>
+
+Yes! Spec System is designed to work with all major AI coding tools:
+
+- **Cursor IDE**: Creates `.cursor/rules/` configuration files
+- **Claude Code**: Generates `.claude/` configuration
+- **Gemini**: Creates `GEMINI.md` instruction file
+- **Other AI tools**: Manual setup instructions provided
+
+The system automatically detects your preferred AI tools and creates the necessary configuration files.
+
+</details>
+
+<details>
+
+<summary><strong>How do I get started with Spec System?</strong></summary>
+
+1. **Quick Setup**: Run `curl -sSL https://raw.githubusercontent.com/ocentra/spec/main/setup.sh | bash`
+2. **Start Project**: Use `@start.md` to begin
+3. **Plan Product**: Use `@plan-product.md` to define your project
+4. **Create Specs**: Use `@create-spec.md` for feature specifications
+5. **Execute Tasks**: Use `@execute-tasks.md` to implement features
+
+The system will guide you through each step interactively.
+
+</details>
+
+<details>
+<summary><strong>Can I customize Spec System for my team?</strong></summary>
+
+Absolutely! Spec System is designed to be completely customizable:
+
+- **Fork & Modify**: Create your own version with team-specific standards
+- **Custom Instructions**: Modify any instruction file to match your preferences
+- **Team Standards**: Define your own coding style, tech stack, and workflows
+- **Share Improvements**: Contribute back to the community if desired
+
+</details>
+
+<details>
+
+<summary><strong>I have more questions!</strong></summary>
+
+Great! Feel free to reach out:
+
+- **LinkedIn**: [Sujan Mishra](https://www.linkedin.com/in/sujanmishra/)
+- **GitHub Issues**: Open an issue for technical questions
+- **Community**: Join discussions about AI-assisted development
+
+We're always happy to help you get the most out of Spec System!
+
+</details>
 
 ---
 
