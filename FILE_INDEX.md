@@ -35,6 +35,7 @@ This index helps AI agents efficiently navigate the Spec System by providing a q
 |------|---------|--------------|-------------|
 | `instructions/plan-product.md` | Product planning and documentation | Creating new product, defining mission | ~3.1k |
 | `instructions/analyze-product.md` | Analyze existing codebase | Working with existing project | ~1.7k |
+| `instructions/deployment-planning.md` | Deployment strategy planning | Planning deployment approach | ~4.2k |
 
 ### Feature Development
 
@@ -43,6 +44,7 @@ This index helps AI agents efficiently navigate the Spec System by providing a q
 | `instructions/create-spec.md` | Create feature specifications | Adding new features, creating specs | ~3.6k |
 | `instructions/execute-tasks.md` | Execute development tasks | Implementing features, coding | ~4.3k |
 | `instructions/phase-orchestrator.md` | Phase-based development | Managing project phases | ~2.4k |
+| `instructions/deploy.md` | Deployment execution | Deploying application | ~5.8k |
 
 ### Project Management
 
@@ -70,8 +72,9 @@ This index helps AI agents efficiently navigate the Spec System by providing a q
 
 1. `start.md` (~4.1k tokens)
 2. `instructions/plan-product.md` (~3.1k tokens)
-3. `instructions/checklist-management.md` (~2.3k tokens)
-**Total: ~9.5k tokens**
+3. `instructions/deployment-planning.md` (~4.2k tokens)
+4. `instructions/checklist-management.md` (~2.3k tokens)
+**Total: ~13.7k tokens**
 
 ### For Feature Development
 
@@ -97,6 +100,14 @@ This index helps AI agents efficiently navigate the Spec System by providing a q
 2. `status.md` (~2.5k tokens) - If need current state
 **Total: ~5.1k tokens**
 
+### For Deployment
+
+**Read these files in order:**
+
+1. `instructions/deploy.md` (~5.8k tokens)
+2. `status.md` (~2.5k tokens) - If need current state
+**Total: ~8.3k tokens**
+
 ### For Documentation Updates
 
 **Read only:**
@@ -116,6 +127,7 @@ These files are created by the system and should be referenced, not read entirel
 | `[PROJECT_NAME]-spec/product/tech-stack.md` | Project root | Technology choices | Read specific sections |
 | `[PROJECT_NAME]-spec/product/roadmap.md` | Project root | Development phases | Read specific sections |
 | `[PROJECT_NAME]-spec/product/decisions.md` | Project root | Technical decisions | Read recent entries |
+| `[PROJECT_NAME]-spec/product/deployment-strategy.md` | Project root | Deployment strategy | Read specific sections |
 | `[PROJECT_NAME]-spec/project-memory.md` | Project root | AI memory and context | Read relevant sections |
 | `[PROJECT_NAME]-spec/checklist.md` | Project root | Task tracking | Read current status |
 | `[PROJECT_NAME]-spec/ai-log.md` | Project root | Activity log | Read recent entries |
@@ -199,6 +211,7 @@ These files are created by the system and should be referenced, not read entirel
 | Check status | `status.md` | `checklist.md` |
 | Create feature | `create-spec.md` | `mission.md`, `tech-stack.md` |
 | Execute tasks | `execute-tasks.md` | `checklist.md` |
+| Deploy application | `deploy.md` | `deployment-strategy.md` |
 | Update project | `update.md` | `ai-log.md` |
 
 ### File Categories

@@ -86,6 +86,7 @@ ELSE:
 - Key features: array[string] (minimum: 3)
 - Target users: array[string] (minimum: 1)
 - Tech stack: object
+- Deployment strategy: object (integrated from deployment-planning.md)
 
 #### Validation
 
@@ -124,7 +125,8 @@ Please provide the following missing information:
 2. List of key features (minimum 3)
 3. Target users and use cases (minimum 1)
 4. Tech stack preferences
-5. Has the new application been initialized yet and we're inside the project folder? (yes/no)
+5. Deployment strategy preferences
+6. Has the new application been initialized yet and we're inside the project folder? (yes/no)
 ```
 
 #### Instructions for User Input
@@ -595,7 +597,27 @@ Highest
 - **DOCUMENT**: Key choices from user inputs
 - **ESTABLISH**: Override authority for future conflicts
 
-### Step 8: Create README.md
+### Step 8: Create deployment-strategy.md
+
+#### Deployment Strategy Creates
+
+File [PROJECT_NAME]-spec/product/deployment-strategy.md
+
+#### Deployment Strategy Integration
+
+- **ACTION**: Follow comprehensive deployment planning rules from @.spec/instructions/deployment-planning.md
+- **QUESTIONS**: Ask all deployment strategy questions based on project type
+- **OUTPUT**: Create complete deployment-strategy.md file
+- **VALIDATION**: Ensure deployment strategy aligns with project type and tech stack
+
+#### Deployment Strategy Instructions
+
+- **ACTION**: Use deployment-planning.md to gather deployment preferences
+- **INTEGRATION**: Ensure deployment strategy supports chosen tech stack
+- **DOCUMENTATION**: Create comprehensive deployment strategy document
+- **DECISIONS**: Update decisions.md with deployment strategy choices
+
+### Step 9: Create README.md
 
 #### README Creates
 
@@ -755,10 +777,11 @@ User-facing project documentation for GitHub repository visitors
 ***IMPORTANT! IF success use [✓] ELSE use [x]***
 
 ```markdown
-    [ ] All 5 files created in .spec/product/
+    [ ] All 6 files created in .spec/product/
     [ ] README.md created at project root
     [ ] User inputs incorporated throughout
     [ ] Missing tech stack items requested
+    [ ] Deployment strategy completed
     [ ] Initial decisions documented
     [ ] CRITICAL: Product planning completed without code implementation
     [ ] CRITICAL: No project-centric code written during planning
@@ -771,7 +794,8 @@ User-facing project documentation for GitHub repository visitors
 2. Create directory structure
 3. Generate each file sequentially
 4. Request any missing information
-5. Create README.md at project root
-6. Validate complete documentation set
+5. Create deployment-strategy.md using deployment-planning.md
+6. Create README.md at project root
+7. Validate complete documentation set
 
 ***CRITICAL ENFORCEMENT: ALL SPEC-RELATED TASKS MUST BE COMPLETED AND VERIFIED BEFORE ANY PROJECT-CENTRIC CODE IS WRITTEN***
