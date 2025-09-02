@@ -41,8 +41,6 @@ When in doubt, consult the official Rust documentation, this guideline, and the 
 23. [Checklist](#checklist)
 24. [Expected Benefits](#expected-benefits)
 
----
-
 ## Ownership Fundamentals
 
 ### Rule 1.1: Each Value Has Exactly One Owner
@@ -84,8 +82,6 @@ fn process_large(data: Vec<LargeStruct>) {
 let data = create_large_data();
 process_large_data(data); // Efficient move
 ```
-
----
 
 ## Borrowing Rules
 
@@ -132,8 +128,6 @@ struct Context<'a> {
 }
 ```
 
----
-
 ## Lifetimes
 
 ### Rule 3.1: Explicit Lifetimes When References Outlive Scope
@@ -172,8 +166,6 @@ struct Context<'a> {
 fn for_any_lifetime<F>(f: F) where F: for<'a> FnOnce(&'a str) {}
 ```
 
----
-
 ## Memory Safety
 
 ### Rule 4.1: Eliminate Null Pointers with `Option<T>`
@@ -208,8 +200,6 @@ fn as_string() -> String {
 ```rust
 let shared = Arc::new(data);
 ```
-
----
 
 ## Error Handling
 
@@ -264,8 +254,6 @@ fn func() -> eyre::Result<()> {
 }
 ```
 
----
-
 ## Concurrency
 
 ### Rule 6.1: Use Message Passing for Concurrency
@@ -302,8 +290,6 @@ fn process<T: Sync>(data: &T) {
 }
 ```
 
----
-
 ## Async Programming
 
 ### Rule 7.1: Use async/await for Non-Blocking I/O
@@ -336,8 +322,6 @@ select! {
     _ = task2() => {}
 }
 ```
-
----
 
 ## Type System
 
@@ -406,8 +390,6 @@ trait Graph {
 }
 ```
 
----
-
 ## Traits and Generics
 
 ### Rule 9.1: Use Traits for Polymorphism
@@ -455,8 +437,6 @@ struct Point {
 }
 ```
 
----
-
 ## Macros and Metaprogramming
 
 ### Rule 10.1: Prefer Functions Over Macros When Possible
@@ -490,8 +470,6 @@ pub fn builder_derive(input: TokenStream) -> TokenStream {
     // Implementation
 }
 ```
-
----
 
 ## Unsafe Rust
 
@@ -547,8 +525,6 @@ fn test_safe_abstraction() {
 }
 ```
 
----
-
 ## Unsafe Rust and FFI
 
 ### Rule 11.3: Adhere to FFI (Foreign Function Interface) Best Practices
@@ -571,8 +547,6 @@ pub extern "C" fn safe_ffi_function() -> i32 {
     }).unwrap_or(-1) // Return error code on panic
 }
 ```
-
----
 
 ## AI-Specific Guidelines
 
@@ -661,8 +635,6 @@ mod tests {
 }
 ```
 
----
-
 ## Common Anti-Patterns
 
 ### Rule 13.1: Avoid `RefCell` Overuse
@@ -695,8 +667,6 @@ fn set_color(color: Color) { /* ... */ }
 let mut vec = vec![1, 2, 3, 4];
 vec.retain(|&x| x % 2 != 0);
 ```
-
----
 
 ## Module Organization
 
@@ -742,8 +712,6 @@ mod internal {
     fn private() { /* ... */ }
 }
 ```
-
----
 
 ## Performance Optimizations
 
@@ -819,8 +787,6 @@ impl ClipPool {
 }
 ```
 
----
-
 ## Best Practices
 
 ### Rule 16.1: Follow Rust Naming Conventions
@@ -891,8 +857,6 @@ pub fn safe_vector_access(vec: &Vec<i32>, index: usize) -> Option<&i32> {
 // cargo fmt
 ```
 
----
-
 ## Testing Strategies
 
 ### Rule 17.1: Write Unit and Integration Tests
@@ -927,8 +891,6 @@ proptest! {
 // cargo fuzz init
 ```
 
----
-
 ## Dependency Management
 
 ### Rule 18.1: Minimize Dependencies
@@ -957,8 +919,6 @@ proptest! {
 ```rust
 #![no_std]
 ```
-
----
 
 ## Security Best Practices
 
@@ -994,8 +954,6 @@ use rand::rngs::OsRng;
 let value = OsRng.gen::<u32>();
 ```
 
----
-
 ## Build, CI, and Tooling
 
 ### Rule 18.1: Enforce Code Quality with CI
@@ -1019,8 +977,6 @@ let value = OsRng.gen::<u32>();
 channel = "1.75.0"
 components = ["rustfmt", "clippy"]
 ```
-
----
 
 ## Migration and Maintenance
 
@@ -1054,8 +1010,6 @@ fn bench_new(b: &mut test::Bencher) {
 // - [ ] No unwrap() in production
 ```
 
----
-
 ## Checklist
 
 ### Rust Best Practices Checklist (For AI and Human Review)
@@ -1075,8 +1029,6 @@ fn bench_new(b: &mut test::Bencher) {
 - [ ] **Benchmarks exist for performance-critical code.**
 - [ ] **`[inline]` is used judiciously for small, hot functions.**
 - [ ] **Follows standard Rust naming conventions (snake_case for functions/variables, PascalCase for types).**
-
----
 
 ## Expected Benefits
 
@@ -1115,4 +1067,3 @@ fn bench_new(b: &mut test::Bencher) {
 - ✅ Minimal unsafe code
 - ✅ Comprehensive validation
 - ✅ Secure dependencies
-
