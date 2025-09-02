@@ -175,6 +175,17 @@ B) Docstrings (NumPy style)
 C) Inline comments only
 ```
 
+#### Rust Questions
+
+```markdown
+Q1: Rust project detected. Use comprehensive Rust API Guidelines?
+A) Yes, use the full Rust API Guidelines (RAG) from @.spec/standards/Rust API Guidelines.md
+B) No, create custom Rust style guide
+C) Use minimal Rust style with basic rules only
+```
+
+**Note**: For Rust projects, we strongly recommend Option A to use the comprehensive Rust Architecture Guidelines (RAG) which covers ownership, borrowing, error handling, async programming, unsafe code, and all Rust best practices.
+
 ### Question Flow Logic
 
 For each question category:
@@ -245,6 +256,7 @@ End for
 
 - **INCLUDE**: References to `@.spec/standards/best-practices.md`
 - **INCLUDE**: References to `@.spec/standards/tech-stack.md`
+- **INCLUDE**: References to `@.spec/standards/Rust API Guidelines.md` for Rust projects
 - **LINK**: To language-specific external style guides
 - **MERGE**: Project-specific rules with global standards
 
@@ -262,6 +274,21 @@ This guide follows the global standards defined in `@.spec/standards/best-practi
 ## External References
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
+```
+
+```markdown
+# Rust Style Guide
+
+## Global Standards
+This guide follows the comprehensive Rust Architecture Guidelines (RAG) defined in `@.spec/standards/Rust API Guidelines.md`. All Rust code must adhere to the safety-first principles, performance by design, and ergonomic API design outlined in the RAG.
+
+## Project-Specific Rules
+[Generated from Q&A or manual input]
+
+## External References
+- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
+- [The Rust Book](https://doc.rust-lang.org/book/)
+- [Rustonomicon](https://doc.rust-lang.org/nomicon/)
 ```
 
 ## Step 7: Style Guide Validation
@@ -354,6 +381,11 @@ IF references to `@.spec/standards/tech-stack.md` are included:
     [x] References to `@.spec/standards/tech-stack.md` included
 ELSE:
     [ ] References to `@.spec/standards/tech-stack.md` included
+
+IF references to `@.spec/standards/Rust API Guidelines.md` are included for Rust projects:
+    [x] References to `@.spec/standards/Rust API Guidelines.md` included for Rust projects
+ELSE:
+    [ ] References to `@.spec/standards/Rust API Guidelines.md` included for Rust projects
 
 ## Example Output
 
@@ -714,6 +746,56 @@ def getUserById(userId):
         if user.id == userId:
             return user
     return None
+```
+
+#### Rust Style Guide Template
+
+```markdown
+---
+description: Rust Style Rules for [PROJECT_NAME]
+globs:
+alwaysApply: false
+version: 1.0
+encoding: UTF-8
+---
+
+# Rust Style Guide
+
+## Primary Reference
+
+**This project follows the comprehensive Rust Architecture Guidelines (RAG) defined in `@.spec/standards/Rust API Guidelines.md`.**
+
+All Rust code in this project must adhere to the complete set of rules and best practices outlined in the RAG, including:
+
+- Ownership and borrowing fundamentals
+- Memory safety and error handling
+- Async programming patterns
+- Type system and trait design
+- Unsafe code guidelines
+- Performance optimizations
+- Testing strategies
+- CI/CD requirements
+
+## Project-Specific Additions
+
+[Any project-specific Rust rules or exceptions to the RAG can be added here]
+
+## Quick Reference
+
+For immediate reference, the most critical RAG rules:
+
+- ✅ Never use `.unwrap()` or `.expect()` in production code
+- ✅ Use `Result<T, E>` for all recoverable errors
+- ✅ Prefer borrowing over cloning
+- ✅ Document all public APIs with `///` comments
+- ✅ Use `cargo fmt` and `cargo clippy` in CI
+- ✅ Minimize and document any `unsafe` code
+
+## External References
+
+- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/)
+- [The Rust Book](https://doc.rust-lang.org/book/)
+- [Rustonomicon](https://doc.rust-lang.org/nomicon/)
 ```
 
 ### File Generation Checklist
